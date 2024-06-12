@@ -100,7 +100,7 @@ FROM CTE;
 WITH CTE as 
         	(SELECT product_name, category,
             ROUND(((ROUND( SUM(CASE
-                        			      WHEN promo_type = "25% OFF" THEN base_price * 0.75 * `quantity_sold(after_promo)`
+                                    WHEN promo_type = "25% OFF" THEN base_price * 0.75 * `quantity_sold(after_promo)`
                                     WHEN promo_type = "33% OFF" THEN base_price * 0.67 * `quantity_sold(after_promo)`
                                     WHEN promo_type = "50% OFF" THEN base_price * 0.5 * `quantity_sold(after_promo)`
                                     WHEN promo_type = "BOGOF" THEN base_price * 0.5 * `quantity_sold(after_promo)`
@@ -121,3 +121,60 @@ FROM CTE
 ORDER BY
         `IR%` DESC LIMIT 5 ;
 ```
+
+## Results and Insights
+
+The analysis revealed several key insights:
+
+- High-value products featured in 'BOGOF' promotions.
+- Distribution of stores across different cities.
+- Total revenue generated before and after each promotional campaign.
+- Incremental sold quantity and revenue percentage during the Diwali campaign.
+- Top 5 products ranked by incremental revenue percentage.
+
+
+These insights can help AtliQ Mart make informed decisions for future promotional activities, optimize resource allocation and enhance overall sales performance
+
+## Conclusion
+
+Overall, this analysis offers valuable insights into the effectiveness of AtliQ Mart's promotional campaigns during Diwali 2023 and Sankranti 2024. By utilizing data analytics, AtliQ Mart can improve its marketing strategies, attract more customers and increase sales during festive seasons.
+
+## Additional Insights
+
+In addition to the main business requests, the following recommended insights were explored during the analysis:
+
+### Store Performance Analysis
+
+- **Top 10 Stores by Incremental Revenue (IR):** Identify the top-performing stores in terms of incremental revenue generated from promotions.
+- **Bottom 10 Stores by Incremental Sold Units (ISU):** Identify the stores with the lowest performance in terms of incremental sold units during the promotional period.
+- **City-wise Store Performance:** Analyze how store performance varies by city and identify any common characteristics among top-performing stores.
+
+### Promotion Type Analysis
+
+- **Top 2 Promotion Types by Incremental Revenue:** Determine the top-performing promotion types that resulted in the highest incremental revenue.
+- **Bottom 2 Promotion Types by Incremental Sold Units:** Identify the least effective promotion types in terms of their impact on incremental sold units.
+- **Comparison of Promotion Types:** Analyze the performance differences between discount-based promotions, BOGOF (Buy One Get One Free), and cashback promotions.
+- **Optimal Promotion Type:** Determine which promotions strike the best balance between incremental sold units and maintaining healthy margins.
+
+### Product and Category Analysis
+
+- **High-Lifting Product Categories:** Identify product categories that saw significant increases in sales from the promotions.
+- **Product Responsiveness to Promotions:** Analyze specific products that respond exceptionally well or poorly to promotions.
+- **Correlation between Product Category and Promotion Type Effectiveness:** Investigate the relationship between product categories and the effectiveness of different promotion types.
+
+## Visualizations
+
+Explore the live Power BI dashboard for interactive visualizations:
+
+[View Power BI Dashboard](https://app.powerbi.com/view?r=eyJrIjoiOTNlMDQ5NzQtMzBjYy00YzNiLTllYjYtOGU0MGQwMTQwY2ZlIiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9)
+
+
+
+## Future Work
+
+Future work could include:
+- Analyzing additional datasets to gain deeper insights into customer behavior and preferences.
+- Performing more detailed analyses on specific product categories or regions.
+- Utilizing machine learning models for predictive analytics to forecast sales and optimize promotional strategies.
+
+
